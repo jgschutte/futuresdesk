@@ -521,7 +521,7 @@ async function fetchFHGroup(syms){
       store[sym.key] = d;
       n++;
     }catch(e){ dbLog(`FH ${sym.key} ✗ ${e.message.slice(0,20)}`,'warn'); }
-    await new Promise(r=>setTimeout(r,120)); // ~8 req/sec, safe for 60/min
+    await new Promise(r=>setTimeout(r,350)); // ~3 req/sec, safe for free tier
   }
   return n;
 }
