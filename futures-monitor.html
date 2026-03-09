@@ -21,19 +21,19 @@ body::before{content:'';position:fixed;inset:0;
 .w{position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:20px;}
 
 header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--brd);flex-wrap:wrap;gap:10px;}
-.logo{font-size:1.9rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;}
+.logo{font-size:2.28rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;}
 .logo span{color:var(--acc);}
-.logo-sub{font-family:'Space Mono',monospace;font-size:.57rem;color:var(--mut);letter-spacing:.13em;text-transform:uppercase;margin-top:2px;}
+.logo-sub{font-family:'Space Mono',monospace;font-size:0.684rem;color:var(--mut);letter-spacing:.13em;text-transform:uppercase;margin-top:2px;}
 .hright{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-.livebadge{display:flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:.62rem;color:var(--acc);}
+.livebadge{display:flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:0.744rem;color:var(--acc);}
 .ldot{width:6px;height:6px;background:var(--acc);border-radius:50%;animation:blk 1.4s ease-in-out infinite;}
 @keyframes blk{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.2;transform:scale(.6)}}
-.clock{font-family:'Space Mono',monospace;font-size:.78rem;color:var(--mut);}
-.rst{display:flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:.59rem;color:var(--mut);}
+.clock{font-family:'Space Mono',monospace;font-size:0.936rem;color:var(--mut);}
+.rst{display:flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:0.708rem;color:var(--mut);}
 .rdot{width:6px;height:6px;border-radius:50%;background:var(--mut);transition:background .3s;flex-shrink:0;}
 .rdot.ok{background:var(--up);}.rdot.err{background:var(--dn);}.rdot.scan{background:#ffcc00;animation:blk .7s infinite;}
-.cdown{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--acc);}
-.sess-badge{display:flex;align-items:center;font-family:'Space Mono',monospace;font-size:.56rem;padding:3px 8px;border-radius:3px;letter-spacing:.06em;}
+.cdown{font-family:'Space Mono',monospace;font-size:0.84rem;color:var(--acc);}
+.sess-badge{display:flex;align-items:center;font-family:'Space Mono',monospace;font-size:0.672rem;padding:3px 8px;border-radius:3px;letter-spacing:.06em;}
 .sess-badge.open{background:rgba(0,212,170,.12);color:var(--up);border:1px solid rgba(0,212,170,.3);}
 .sess-badge.closed{background:rgba(123,143,166,.1);color:var(--mut);border:1px solid rgba(123,143,166,.2);}
 
@@ -41,13 +41,13 @@ header{display:flex;align-items:center;justify-content:space-between;margin-bott
 .pb{height:100%;background:var(--acc);width:100%;transition:width 1s linear;}
 
 .dbx{background:rgba(0,0,0,.5);border:1px solid var(--brd);border-radius:5px;padding:8px 12px;
-  margin-bottom:10px;font-family:'Space Mono',monospace;font-size:.56rem;color:var(--mut);
+  margin-bottom:10px;font-family:'Space Mono',monospace;font-size:0.672rem;color:var(--mut);
   max-height:72px;overflow:hidden;}
 .dbr{margin-bottom:1px;}.dbr.ok{color:var(--up);}.dbr.err{color:var(--dn);}.dbr.warn{color:#ffcc00;}
 
 .alert{background:linear-gradient(90deg,rgba(255,107,53,.09),rgba(255,77,109,.05));
   border:1px solid rgba(255,107,53,.35);border-radius:5px;padding:7px 12px;margin-bottom:10px;
-  display:flex;align-items:flex-start;gap:8px;font-family:'Space Mono',monospace;font-size:.6rem;color:#ff8c5a;}
+  display:flex;align-items:flex-start;gap:8px;font-family:'Space Mono',monospace;font-size:0.72rem;color:#ff8c5a;}
 
 /* SNAP */
 .snapbar{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px;margin-bottom:13px;}
@@ -58,51 +58,51 @@ header{display:flex;align-items:center;justify-content:space-between;margin-bott
 @keyframes fu{0%{background:rgba(0,212,170,.13)}100%{background:var(--sur)}}
 @keyframes fd{0%{background:rgba(255,77,109,.13)}100%{background:var(--sur)}}
 .snap.fu{animation:fu .5s ease-out;}.snap.fd{animation:fd .5s ease-out;}
-.slbl{font-family:'Space Mono',monospace;font-size:.5rem;color:var(--mut);text-transform:uppercase;margin-bottom:2px;}
-.sprc{font-size:.95rem;font-weight:800;line-height:1;color:var(--txt);}
-.schg{font-family:'Space Mono',monospace;font-size:.56rem;font-weight:700;margin-top:2px;}
+.slbl{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--mut);text-transform:uppercase;margin-bottom:2px;}
+.sprc{font-size:1.14rem;font-weight:800;line-height:1;color:var(--txt);}
+.schg{font-family:'Space Mono',monospace;font-size:0.672rem;font-weight:700;margin-top:2px;}
 .schg.up{color:var(--up);}.schg.dn{color:var(--dn);}.schg.hot{color:#ff8c5a;}.schg.fl{color:var(--fl);}
-.snap-src{font-family:'Space Mono',monospace;font-size:.4rem;color:rgba(0,212,170,.35);position:absolute;top:3px;right:5px;}
+.snap-src{font-family:'Space Mono',monospace;font-size:0.48rem;color:rgba(0,212,170,.35);position:absolute;top:3px;right:5px;}
 
 /* TABS */
 .tabs{display:flex;gap:2px;margin-bottom:16px;border-bottom:1px solid var(--brd);overflow-x:auto;}
-.tab{padding:7px 14px;font-family:'Barlow Condensed',sans-serif;font-size:.77rem;font-weight:600;
+.tab{padding:7px 14px;font-family:'Barlow Condensed',sans-serif;font-size:0.924rem;font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;color:var(--mut);cursor:pointer;border:none;
   background:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .18s;white-space:nowrap;}
 .tab:hover{color:var(--txt);}.tab.active{color:var(--acc);border-bottom-color:var(--acc);}
 .sec{display:none;}.sec.active{display:block;}
 
-.cat{font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.17em;text-transform:uppercase;
+.cat{font-family:'Space Mono',monospace;font-size:0.648rem;letter-spacing:.17em;text-transform:uppercase;
   color:var(--mut);margin:15px 0 8px;display:flex;align-items:center;gap:8px;}
 .cat:first-child{margin-top:0;}.cat::after{content:'';flex:1;height:1px;background:var(--brd);}
 .card{background:var(--sur);border:1px solid var(--brd);border-radius:5px;overflow:hidden;}
 .card-hdr{display:flex;align-items:center;justify-content:space-between;padding:7px 11px;
   border-bottom:1px solid var(--brd);background:rgba(0,0,0,.2);}
-.card-ttl{font-size:.63rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--mut);}
-.card-tag{font-family:'Space Mono',monospace;font-size:.5rem;color:var(--acc3);background:rgba(77,166,255,.09);padding:2px 5px;border-radius:3px;}
+.card-ttl{font-size:0.756rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--mut);}
+.card-tag{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--acc3);background:rgba(77,166,255,.09);padding:2px 5px;border-radius:3px;}
 .chart-wrap{height:340px;width:100%;position:relative;}
 .chart-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-family:'Space Mono',monospace;font-size:.6rem;color:var(--mut);}
+  font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--mut);}
 
 /* TABLE */
 .dt{width:100%;border-collapse:collapse;}
-.dt th{font-family:'Space Mono',monospace;font-size:.52rem;color:var(--mut);letter-spacing:.08em;
+.dt th{font-family:'Space Mono',monospace;font-size:0.624rem;color:var(--mut);letter-spacing:.08em;
   text-transform:uppercase;text-align:right;padding:6px 10px;border-bottom:1px solid var(--brd);font-weight:400;}
 .dt th:first-child{text-align:left;}
-.dt td{padding:7px 10px;text-align:right;border-bottom:1px solid rgba(26,37,53,.4);font-size:.8rem;font-weight:600;}
+.dt td{padding:7px 10px;text-align:right;border-bottom:1px solid rgba(26,37,53,.4);font-size:0.96rem;font-weight:600;}
 .dt td:first-child{text-align:left;}
 .dt tr:last-child td{border-bottom:none;}
 .dt tr:hover td{background:rgba(255,255,255,.015);}
-.nm{font-size:.82rem;font-weight:700;color:var(--txt);}
-.sym{font-family:'Space Mono',monospace;font-size:.5rem;color:var(--mut);display:block;font-weight:400;margin-top:1px;}
-.pc{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--txt);}
-.cc{font-family:'Space Mono',monospace;font-size:.7rem;}
+.nm{font-size:0.984rem;font-weight:700;color:var(--txt);}
+.sym{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--mut);display:block;font-weight:400;margin-top:1px;}
+.pc{font-family:'Space Mono',monospace;font-size:0.888rem;color:var(--txt);}
+.cc{font-family:'Space Mono',monospace;font-size:0.84rem;}
 .cc.up{color:var(--up);}.cc.dn{color:var(--dn);}.cc.hot{color:#ff8c5a;font-weight:700;}.cc.fl{color:var(--fl);}
-.bu{background:rgba(0,212,170,.09);color:var(--up);padding:1px 5px;border-radius:3px;font-size:.6rem;}
-.bd{background:rgba(255,77,109,.09);color:var(--dn);padding:1px 5px;border-radius:3px;font-size:.6rem;}
-.bh{background:rgba(255,107,53,.11);color:#ff8c5a;padding:1px 5px;border-radius:3px;font-size:.6rem;}
-.bf{background:rgba(123,143,166,.09);color:var(--fl);padding:1px 5px;border-radius:3px;font-size:.6rem;}
-.nc{font-size:.66rem;color:var(--mut);max-width:180px;}
+.bu{background:rgba(0,212,170,.09);color:var(--up);padding:1px 5px;border-radius:3px;font-size:0.72rem;}
+.bd{background:rgba(255,77,109,.09);color:var(--dn);padding:1px 5px;border-radius:3px;font-size:0.72rem;}
+.bh{background:rgba(255,107,53,.11);color:#ff8c5a;padding:1px 5px;border-radius:3px;font-size:0.72rem;}
+.bf{background:rgba(123,143,166,.09);color:var(--fl);padding:1px 5px;border-radius:3px;font-size:0.72rem;}
+.nc{font-size:0.792rem;color:var(--mut);max-width:180px;}
 @keyframes ru{0%{background:rgba(0,212,170,.07)}100%{background:transparent}}
 @keyframes rd{0%{background:rgba(255,77,109,.07)}100%{background:transparent}}
 .ru td{animation:ru .55s ease-out;}.rd td{animation:rd .55s ease-out;}
@@ -110,26 +110,26 @@ header{display:flex;align-items:center;justify-content:space-between;margin-bott
 /* FEAR BAR */
 .fbar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px;}
 .fi{background:var(--sur);border:1px solid var(--brd);border-radius:4px;padding:8px 11px;flex:1;min-width:110px;}
-.fn{font-family:'Space Mono',monospace;font-size:.5rem;color:var(--mut);text-transform:uppercase;margin-bottom:3px;}
-.fv{font-size:1.2rem;font-weight:800;line-height:1;transition:all .3s;}
-.fs{font-size:.6rem;color:var(--mut);margin-top:2px;}
+.fn{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--mut);text-transform:uppercase;margin-bottom:3px;}
+.fv{font-size:1.44rem;font-weight:800;line-height:1;transition:all .3s;}
+.fs{font-size:0.72rem;color:var(--mut);margin-top:2px;}
 
 /* CTX CARDS */
 .ctxg{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:10px;margin-bottom:13px;}
 .ccard{background:var(--sur);border:1px solid var(--brd);border-radius:5px;padding:11px 13px;}
 .ccard.o{border-left:3px solid var(--acc2);}.ccard.g{border-left:3px solid var(--up);}
 .ccard.b{border-left:3px solid var(--acc3);}.ccard.r{border-left:3px solid var(--dn);}
-.clbl{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.clbl{font-family:'Space Mono',monospace;font-size:0.624rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
 .clbl.o{color:#ff8c5a;}.clbl.g{color:var(--up);}.clbl.b{color:var(--acc3);}.clbl.r{color:var(--dn);}
-.ctit{font-size:.85rem;font-weight:700;color:var(--txt);margin-bottom:5px;line-height:1.25;}
-.cbdy{font-size:.7rem;color:var(--mut);line-height:1.6;}.cbdy b{color:var(--txt);}
+.ctit{font-size:1.02rem;font-weight:700;color:var(--txt);margin-bottom:5px;line-height:1.25;}
+.cbdy{font-size:0.84rem;color:var(--mut);line-height:1.6;}.cbdy b{color:var(--txt);}
 
 .g2{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:12px;}
 
 footer{margin-top:24px;padding-top:12px;border-top:1px solid var(--brd);
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;}
-.ft{font-family:'Space Mono',monospace;font-size:.52rem;color:var(--mut);}
-.fb{font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);}
+.ft{font-family:'Space Mono',monospace;font-size:0.624rem;color:var(--mut);}
+.fb{font-size:0.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);}
 .fb span{color:var(--acc);}
 ::-webkit-scrollbar{width:3px;height:3px;}::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--brd);border-radius:2px;}
@@ -138,19 +138,19 @@ footer{margin-top:24px;padding-top:12px;border-top:1px solid var(--brd);
 /* SETUP MODAL */
 .setup-overlay{position:fixed;inset:0;background:rgba(7,11,15,.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;}
 .setup-box{background:var(--sur);border:1px solid var(--brd);border-radius:8px;max-width:620px;width:100%;padding:30px 32px;}
-.setup-title{font-size:1.4rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.setup-title{font-size:1.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
 .setup-title span{color:var(--acc);}
-.setup-sub{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--mut);margin-bottom:22px;letter-spacing:.08em;}
+.setup-sub{font-family:'Space Mono',monospace;font-size:0.696rem;color:var(--mut);margin-bottom:22px;letter-spacing:.08em;}
 .setup-step{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;}
-.setup-num{background:var(--acc);color:#000;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.75rem;flex-shrink:0;margin-top:1px;}
+.setup-num{background:var(--acc);color:#000;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;margin-top:1px;}
 .setup-body{flex:1;}
-.setup-label{font-size:.85rem;font-weight:700;color:var(--txt);margin-bottom:5px;}
-.setup-desc{font-size:.72rem;color:var(--mut);line-height:1.6;margin-bottom:7px;}
-.setup-cmd{background:rgba(0,0,0,.5);border:1px solid var(--brd);border-radius:4px;padding:9px 13px;font-family:'Space Mono',monospace;font-size:.68rem;color:var(--acc);cursor:pointer;position:relative;user-select:all;}
+.setup-label{font-size:1.02rem;font-weight:700;color:var(--txt);margin-bottom:5px;}
+.setup-desc{font-size:0.864rem;color:var(--mut);line-height:1.6;margin-bottom:7px;}
+.setup-cmd{background:rgba(0,0,0,.5);border:1px solid var(--brd);border-radius:4px;padding:9px 13px;font-family:'Space Mono',monospace;font-size:0.816rem;color:var(--acc);cursor:pointer;position:relative;user-select:all;}
 .setup-cmd:hover{border-color:var(--acc);}
-.setup-cmd .cp{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:.55rem;color:var(--mut);}
+.setup-cmd .cp{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:0.66rem;color:var(--mut);}
 .setup-divider{border:none;border-top:1px solid var(--brd);margin:20px 0;}
-.setup-skip{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--mut);text-align:center;cursor:pointer;}
+.setup-skip{font-family:'Space Mono',monospace;font-size:0.696rem;color:var(--mut);text-align:center;cursor:pointer;}
 .setup-skip:hover{color:var(--txt);}
 .setup-skip span{color:var(--acc);}
 </style>
@@ -481,14 +481,14 @@ const FH_CASH = [
   {key:'NK',  fh:'^N225',        ep:'stock', label:'Nikkei 225',      pfx:'',  note:'Japan'},
 ];
 const FH_ENERGY = [
-  {key:'CL',  fh:'USOIL',   ep:'stock', label:'WTI Crude',  pfx:'$', note:'⚡ Iran spike'},
-  {key:'BZ',  fh:'UKOIL',   ep:'stock', label:'Brent',      pfx:'$', note:'Hormuz risk'},
-  {key:'NG',  fh:'NATGAS',  ep:'stock', label:'Nat Gas',    pfx:'$', note:'LNG demand'},
+  {key:'CL',  fh:'CL1!',   ep:'stock', label:'WTI Crude',  pfx:'$', note:'⚡ Iran spike'},
+  {key:'BZ',  fh:'BZ1!',   ep:'stock', label:'Brent',      pfx:'$', note:'Hormuz risk'},
+  {key:'NG',  fh:'NG1!',   ep:'stock', label:'Nat Gas',    pfx:'$', note:'LNG demand'},
 ];
 const FH_METALS = [
-  {key:'GC',  fh:'GOLD',    ep:'stock', label:'Gold',   pfx:'$', note:'Safe haven vs USD'},
-  {key:'SI',  fh:'SILVER',  ep:'stock', label:'Silver', pfx:'$', note:'Lateral'},
-  {key:'HG',  fh:'COPPER',  ep:'stock', label:'Copper', pfx:'$', note:'Barometer'},
+  {key:'GC',  fh:'GC1!',   ep:'stock', label:'Gold',   pfx:'$', note:'Safe haven vs USD'},
+  {key:'SI',  fh:'SI1!',   ep:'stock', label:'Silver', pfx:'$', note:'Lateral'},
+  {key:'HG',  fh:'HG1!',   ep:'stock', label:'Copper', pfx:'$', note:'Barometer'},
 ];
 const FH_BONDS = [
   {key:'TNX', fh:'US10Y',         ep:'stock', label:'10Y Yield', pfx:'', note:'+14bps sem'},
@@ -535,57 +535,100 @@ async function fetchAllFinnhub(open){
   return n;
 }
 
-// ── FINNHUB CANDLES — for Lightweight Charts ──────────────────
-// /stock/candle?symbol=AAPL&resolution=D&from=...&to=...&token=...
+// ── CHART HISTORY — multi-source ─────────────────────────────
+// Binance klines for crypto, Frankfurter for FX, Finnhub candles for equity/commodities
 const chartCache={};
 
-async function fetchChartHistory(fhSym, label, ep='stock'){
-  if(chartCache[fhSym] && Date.now()-chartCache[fhSym].ts < 600000)
-    return chartCache[fhSym].data;
-
-  const to   = Math.floor(Date.now()/1000);
-  const from = to - 90*86400;
-
-  // Build endpoint based on type
-  let epUrl;
-  if(ep==='forex')  epUrl=`${FH_BASE}/forex/candle?symbol=${encodeURIComponent(fhSym)}&resolution=D&from=${from}&to=${to}&token=${FH}`;
-  else if(ep==='crypto') epUrl=`${FH_BASE}/crypto/candle?symbol=${encodeURIComponent(fhSym)}&resolution=D&from=${from}&to=${to}&token=${FH}`;
-  else epUrl=`${FH_BASE}/stock/candle?symbol=${encodeURIComponent(fhSym)}&resolution=D&from=${from}&to=${to}&token=${FH}`;
-  const endpoints = [epUrl];
-
-  for(const url of endpoints){
-    try{
-      const r = await fetch(url, {signal:AbortSignal.timeout(8000)});
-      if(!r.ok) continue;
-      const d = await r.json();
-      if(d.s !== 'ok' || !d.t || d.t.length < 5) continue;
-      const data = d.t.map((ts,i)=>{
-        const o=d.o[i],h=d.h[i],l=d.l[i],c=d.c[i];
-        return {time:ts, open:o, high:h, low:l, close:c};
-      }).filter(x=>x.close>0);
-      chartCache[fhSym] = {data, ts:Date.now()};
-      return data;
-    }catch(e){}
-  }
-  dbLog(`Chart ${fhSym} sin datos`,'warn');
-  return null;
+// Binance klines → OHLC array for Lightweight Charts
+async function fetchBinanceKlines(symbol, days=90){
+  const limit = Math.min(days, 500);
+  const url = `https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=1d&limit=${limit}`;
+  const r = await fetch(url, {signal:AbortSignal.timeout(8000)});
+  if(!r.ok) throw new Error('Binance '+r.status);
+  const raw = await r.json();
+  return raw.map(k=>({
+    time: Math.floor(k[0]/1000),
+    open: parseFloat(k[1]), high: parseFloat(k[2]),
+    low:  parseFloat(k[3]), close: parseFloat(k[4])
+  })).filter(x=>x.close>0);
 }
 
-// Chart definitions: containerId → {s: futures symbol, cashS: cash symbol, ep: endpoint type}
+// Frankfurter historical → OHLC (close only, synthesize OHLC from daily closes)
+async function fetchFrankfurterHistory(base, quote, days=90){
+  const toDate = new Date(); 
+  const fromDate = new Date(Date.now() - days*86400000);
+  const fmt = d => d.toISOString().slice(0,10);
+  const url = `https://api.frankfurter.app/${fmt(fromDate)}..${fmt(toDate)}?from=${base}&to=${quote}`;
+  const r = await fetch(url, {signal:AbortSignal.timeout(8000)});
+  if(!r.ok) throw new Error('Frankfurter '+r.status);
+  const d = await r.json();
+  const entries = Object.entries(d.rates||{}).sort(([a],[b])=>a.localeCompare(b));
+  return entries.map(([date, rates])=>{
+    const c = rates[quote]||rates[Object.keys(rates)[0]];
+    const ts = Math.floor(new Date(date+'T12:00:00Z').getTime()/1000);
+    return {time:ts, open:c, high:c*1.001, low:c*0.999, close:c};
+  }).filter(x=>x.close>0);
+}
+
+// Finnhub stock candle
+async function fetchFinnhubCandle(symbol, days=90){
+  const to   = Math.floor(Date.now()/1000);
+  const from = to - days*86400;
+  const url = `${FH_BASE}/stock/candle?symbol=${encodeURIComponent(symbol)}&resolution=D&from=${from}&to=${to}&token=${FH}`;
+  const r = await fetch(url, {signal:AbortSignal.timeout(8000)});
+  if(!r.ok) throw new Error('FH candle '+r.status);
+  const d = await r.json();
+  if(d.s !== 'ok' || !d.t || d.t.length < 5) throw new Error('no candle data');
+  return d.t.map((ts,i)=>({
+    time:ts, open:d.o[i], high:d.h[i], low:d.l[i], close:d.c[i]
+  })).filter(x=>x.close>0);
+}
+
+// Chart definitions: containerId → fetch strategy
 const CHART_SYMS = {
-  chartES:    {s:'ES1!',           cashS:'SPY',            ep:'stock', label:'E-Mini S&P 500'},
-  chartNQ:    {s:'NQ1!',           cashS:'QQQ',            ep:'stock', label:'Nasdaq'},
-  chartYM:    {s:'YM1!',           cashS:'DIA',            ep:'stock', label:'Dow'},
-  chartDAX:   {s:'^GDAXI',         cashS:'^GDAXI',         ep:'stock', label:'DAX 40'},
-  chartCL:    {s:'USOIL',  cashS:'USOIL',  label:'WTI Crude'},
-  chartBZ:    {s:'UKOIL',  cashS:'UKOIL',  label:'Brent'},
-  chartGC:    {s:'GOLD',   cashS:'GOLD',   label:'Gold'},
-  chartNG:    {s:'NATGAS', cashS:'NATGAS', label:'Nat Gas'},
-  chartBTC:   {s:'BINANCE:BTCUSDT',cashS:'BINANCE:BTCUSDT',ep:'crypto',label:'Bitcoin'},
-  chartETH:   {s:'BINANCE:ETHUSDT',cashS:'BINANCE:ETHUSDT',ep:'crypto',label:'Ethereum'},
-  chartTNX:   {s:'US10Y',          cashS:'US10Y',          ep:'stock', label:'10Y Yield'},
-  chartEURUSD:{s:'EURUSD',          cashS:'EURUSD',          label:'EUR/USD'},
+  chartES:    {type:'fh',   sym:'SPY',      fSym:'SPY',      label:'S&P 500 (SPY)'},
+  chartNQ:    {type:'fh',   sym:'QQQ',      fSym:'QQQ',      label:'Nasdaq (QQQ)'},
+  chartYM:    {type:'fh',   sym:'DIA',      fSym:'DIA',      label:'Dow (DIA)'},
+  chartDAX:   {type:'fh',   sym:'^GDAXI',   fSym:'^GDAXI',   label:'DAX 40'},
+  chartCL:    {type:'fh',   sym:'USOIL',    fSym:'USOIL',    label:'WTI Crude'},
+  chartBZ:    {type:'fh',   sym:'UKOIL',    fSym:'UKOIL',    label:'Brent'},
+  chartGC:    {type:'fh',   sym:'GC1!',     fSym:'GC1!',     label:'Gold Futures'},
+  chartNG:    {type:'fh',   sym:'NG1!',     fSym:'NG1!',     label:'Nat Gas'},
+  chartBTC:   {type:'binance', sym:'BTCUSDT',               label:'Bitcoin'},
+  chartETH:   {type:'binance', sym:'ETHUSDT',               label:'Ethereum'},
+  chartTNX:   {type:'fh',   sym:'US10Y',    fSym:'US10Y',    label:'10Y Yield'},
+  chartEURUSD:{type:'fx',   base:'EUR',     quote:'USD',     label:'EUR/USD'},
 };
+
+async function fetchChartHistory(containerId){
+  const def = CHART_SYMS[containerId]; if(!def) return null;
+  const cacheKey = containerId;
+  if(chartCache[cacheKey] && Date.now()-chartCache[cacheKey].ts < 600000)
+    return chartCache[cacheKey].data;
+
+  try{
+    let data;
+    if(def.type==='binance'){
+      data = await fetchBinanceKlines(def.sym);
+    } else if(def.type==='fx'){
+      data = await fetchFrankfurterHistory(def.base, def.quote);
+    } else {
+      // Finnhub candle — try both symbols
+      try{ data = await fetchFinnhubCandle(def.sym); }
+      catch(e){ 
+        if(def.fSym && def.fSym!==def.sym) data = await fetchFinnhubCandle(def.fSym);
+        else throw e;
+      }
+    }
+    if(!data || data.length<5){ dbLog(`Chart ${containerId} sin datos`,'warn'); return null; }
+    data.sort((a,b)=>a.time-b.time);
+    chartCache[cacheKey] = {data, ts:Date.now()};
+    return data;
+  }catch(e){
+    dbLog(`Chart ${containerId} ✗ ${e.message.slice(0,30)}`,'warn');
+    return null;
+  }
+}
 
 // ── COINGECKO ─────────────────────────────────────────────────
 const CG_COINS=[
@@ -931,12 +974,10 @@ const LW_OPTS={
 
 async function initChart(containerId, open){
   const def=CHART_SYMS[containerId]; if(!def) return;
-  const sym = open ? def.cashS : def.s;
-  const ep  = def.ep||'stock';
   const el  = document.getElementById(containerId); if(!el) return;
   el.innerHTML=`<div class="chart-loading">Cargando ${def.label}...</div>`;
 
-  const data = await fetchChartHistory(sym, def.label, ep);
+  const data = await fetchChartHistory(containerId);
   if(!data||data.length===0){
     el.innerHTML=`<div class="chart-loading" style="color:var(--dn)">Sin datos · ${def.label}</div>`;
     return;
