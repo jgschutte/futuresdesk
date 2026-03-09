@@ -465,8 +465,7 @@ const FH = 'd6ngil9r01qodk5vn95gd6ngil9r01qodk5vn960';
 const FH_BASE = 'https://finnhub.io/api/v1';
 
 // Finnhub symbol maps
-// Equities & ETFs: plain ticker. Forex: OANDA:EURUSD. Crypto: BINANCE:BTCUSDT
-// Commodities via forex endpoint: OANDA:WTICOUSD, OANDA:BCOUSD, etc.
+// All symbols use Finnhub /quote endpoint
 const FH_FUTURES = [
   {key:'ES',  fh:'ES1!',         ep:'stock', label:'E-Mini S&P 500', pfx:'',  note:'US equity future'},
   {key:'NQ',  fh:'NQ1!',         ep:'stock', label:'Nasdaq 100 Fut',  pfx:'',  note:'Tech future'},
@@ -482,46 +481,30 @@ const FH_CASH = [
   {key:'NK',  fh:'^N225',        ep:'stock', label:'Nikkei 225',      pfx:'',  note:'Japan'},
 ];
 const FH_ENERGY = [
-  {key:'CL',  fh:'OANDA:WTICOUSD', ep:'forex', label:'WTI Crude',  pfx:'$', note:'⚡ Iran spike'},
-  {key:'BZ',  fh:'OANDA:BCOUSD',   ep:'forex', label:'Brent',      pfx:'$', note:'Hormuz risk'},
-  {key:'NG',  fh:'OANDA:NATGASUSD',ep:'forex', label:'Nat Gas',    pfx:'$', note:'LNG demand'},
+  {key:'CL',  fh:'USOIL',   ep:'stock', label:'WTI Crude',  pfx:'$', note:'⚡ Iran spike'},
+  {key:'BZ',  fh:'UKOIL',   ep:'stock', label:'Brent',      pfx:'$', note:'Hormuz risk'},
+  {key:'NG',  fh:'NATGAS',  ep:'stock', label:'Nat Gas',    pfx:'$', note:'LNG demand'},
 ];
 const FH_METALS = [
-  {key:'GC',  fh:'OANDA:XAUUSD',  ep:'forex', label:'Gold',   pfx:'$', note:'Safe haven vs USD'},
-  {key:'SI',  fh:'OANDA:XAGUSD',  ep:'forex', label:'Silver', pfx:'$', note:'Lateral'},
-  {key:'HG',  fh:'OANDA:XCUUSD',  ep:'forex', label:'Copper', pfx:'$', note:'Barometer'},
+  {key:'GC',  fh:'GOLD',    ep:'stock', label:'Gold',   pfx:'$', note:'Safe haven vs USD'},
+  {key:'SI',  fh:'SILVER',  ep:'stock', label:'Silver', pfx:'$', note:'Lateral'},
+  {key:'HG',  fh:'COPPER',  ep:'stock', label:'Copper', pfx:'$', note:'Barometer'},
 ];
 const FH_BONDS = [
   {key:'TNX', fh:'US10Y',         ep:'stock', label:'10Y Yield', pfx:'', note:'+14bps sem'},
   {key:'TYX', fh:'US30Y',         ep:'stock', label:'30Y Yield', pfx:'', note:''},
 ];
 
-// Finnhub quote — stock uses /quote, forex uses /forex/rates
+// Finnhub quote — /quote endpoint for all symbols
 async function fetchOneFH(sym){
   let price=null, pct=null;
-
-  if(sym.ep==='forex'){
-    // Forex/commodity: parse OANDA:XAUUSD → base=XAU, quote=USD
-    const pair = sym.fh.split(':')[1]||sym.fh; // e.g. XAUUSD
-    const base = pair.slice(0,3), quote = pair.slice(3);
-    const url = `${FH_BASE}/forex/rates?base=${base}&token=${FH}`;
-    const r = await fetch(url, {signal:AbortSignal.timeout(7000)});
-    if(!r.ok) throw new Error('FH forex '+r.status);
-    const d = await r.json();
-    price = d.quote?.[quote];
-    if(!price||price===0) throw new Error('no forex price');
-    // No pct available from this endpoint — set null
-    pct = null;
-  } else {
-    // Stock/ETF/index/futures
-    const url = `${FH_BASE}/quote?symbol=${encodeURIComponent(sym.fh)}&token=${FH}`;
-    const r = await fetch(url, {signal:AbortSignal.timeout(7000)});
-    if(!r.ok) throw new Error('FH stock '+r.status);
-    const d = await r.json();
-    price = d.c;
-    if(!price||price===0) throw new Error('no stock price');
-    pct = d.dp;
-  }
+  const url = `${FH_BASE}/quote?symbol=${encodeURIComponent(sym.fh)}&token=${FH}`;
+  const r = await fetch(url, {signal:AbortSignal.timeout(7000)});
+  if(!r.ok) throw new Error('FH '+r.status);
+  const d = await r.json();
+  price = d.c;
+  if(!price||price===0) throw new Error('no price for '+sym.fh);
+  pct = d.dp;
 
   const fmt = (sym.pfx||'') + (price>=10000
     ? price.toLocaleString('en-US',{maximumFractionDigits:0})
@@ -594,14 +577,14 @@ const CHART_SYMS = {
   chartNQ:    {s:'NQ1!',           cashS:'QQQ',            ep:'stock', label:'Nasdaq'},
   chartYM:    {s:'YM1!',           cashS:'DIA',            ep:'stock', label:'Dow'},
   chartDAX:   {s:'^GDAXI',         cashS:'^GDAXI',         ep:'stock', label:'DAX 40'},
-  chartCL:    {s:'OANDA:WTICOUSD', cashS:'OANDA:WTICOUSD', ep:'forex', label:'WTI Crude'},
-  chartBZ:    {s:'OANDA:BCOUSD',   cashS:'OANDA:BCOUSD',   ep:'forex', label:'Brent'},
-  chartGC:    {s:'OANDA:XAUUSD',   cashS:'OANDA:XAUUSD',   ep:'forex', label:'Gold'},
-  chartNG:    {s:'OANDA:NATGASUSD',cashS:'OANDA:NATGASUSD',ep:'forex', label:'Nat Gas'},
+  chartCL:    {s:'USOIL',  cashS:'USOIL',  label:'WTI Crude'},
+  chartBZ:    {s:'UKOIL',  cashS:'UKOIL',  label:'Brent'},
+  chartGC:    {s:'GOLD',   cashS:'GOLD',   label:'Gold'},
+  chartNG:    {s:'NATGAS', cashS:'NATGAS', label:'Nat Gas'},
   chartBTC:   {s:'BINANCE:BTCUSDT',cashS:'BINANCE:BTCUSDT',ep:'crypto',label:'Bitcoin'},
   chartETH:   {s:'BINANCE:ETHUSDT',cashS:'BINANCE:ETHUSDT',ep:'crypto',label:'Ethereum'},
   chartTNX:   {s:'US10Y',          cashS:'US10Y',          ep:'stock', label:'10Y Yield'},
-  chartEURUSD:{s:'OANDA:EURUSD',   cashS:'OANDA:EURUSD',   ep:'forex', label:'EUR/USD'},
+  chartEURUSD:{s:'EURUSD',          cashS:'EURUSD',          label:'EUR/USD'},
 };
 
 // ── COINGECKO ─────────────────────────────────────────────────
